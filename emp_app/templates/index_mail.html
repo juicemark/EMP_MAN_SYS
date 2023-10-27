@@ -1,7 +1,8 @@
 {% load static %}
-
+{% block navbar %} {% include "navbar.html" %} {% endblock navbar %}
+{% block navigation %} {% include "navigation.html" %} {% endblock navigation %}
 {% block content %}
-
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,13 +16,13 @@
 </head>
 <body>
 <div class="container">
-    <h1>Mails</h1>
+    <h1 style="color:white">Mails</h1>
     <hr>
-    <a class="btn btn-primary" href="/create_mail" role="button">Create Mail</a>
-    <a class="btn btn-primary" href='/reply_mail' role="button">Reply Mail</a>
-    <a class="btn btn-primary" href="/received_mail" role="button">Received Mails</a>
-    <a class="btn btn-primary" href="/sent_mail" role="button">Sent Mails</a>
-    <a class="btn btn-primary" href='/index' role="button">Home</a>
+    <a class="btn btn-light" href="/create_mail" role="button"><i class="fas fa-plus"></i> Create Mail</a>
+    <a class="btn btn-light" href='/reply_mail' role="button"><i class="fas fa-reply"></i> Reply Mail</a>
+    <a class="btn btn-light" href="/received_mail" role="button"><i class="fas fa-inbox"></i> Received Mails</a>
+    <a class="btn btn-light" href="/sent_mail" role="button"><i class="fas fa-paper-plane"></i> Sent Mails</a>
+    <a class="btn btn-light" href='/index' role="button"><i class="fas fa-home"></i> Home</a>
 </div>
 <!-- Include Bootstrap JavaScript without jQuery and Popper -->
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
