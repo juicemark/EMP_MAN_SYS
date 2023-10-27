@@ -1,3 +1,5 @@
+{% block navbar %} {% include "navbar.html" %} {% endblock navbar %}
+{% block navigation %} {% include "navigation.html" %} {% endblock navigation %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,32 +23,32 @@
 </head>
 <body>
 <div class="container">
-    <h1>Create Mail</h1>
+    <h1 style="color:white">Create Mail</h1>
     <hr>
     <form method="post" action="http://127.0.0.1:8000/create_mail">
         {% csrf_token %}
-        <label for="recipient">Recipient:</label><br>
+        <label style="color:white" for="recipient">Recipient:</label><br>
         <input id="recipient" name="recipient" size="25" minlength="2" maxlength="50" required><br>
-        <label for="subject">Subject:</label><br>
+        <label style="color:white" for="subject">Subject:</label><br>
         <textarea id="subject" name="subject" minlength="2" maxlength="100" required></textarea><br>
-        <label for="content">Content:</label><br>
+        <label style="color:white" for="content">Content:</label><br>
         <textarea id="content" name="content" minlength="2" maxlength="1000" required></textarea><br>
         <hr>
         <div>
-            <button type="submit" class="btn btn-primary">Send</button>
-            <button type="reset" class="btn btn-primary">Clear</button>
+            <button type="submit" class="btn btn-light"><i class="fas fa-paper-plane"></i> Send</button>
+            <button type="reset" class="btn btn-light"><i class="fas fa-eraser"></i> Clear</button>
             {% if mail_added %}
             <!-- Employee Added Successfully Message -->
             <div class="alert alert-success" role="alert">
                 Mail sent Successfully
             </div>
             <!-- Home Button -->
-            <a class="btn btn-primary" href="/index" role="button">Home</a>
+            <a class="btn btn-light" href="/index" role="button">Home</a>
             {% else %}
             <!-- Home Button -->
-            <a class="btn btn-primary" href="/index" role="button">Home</a>
+            <a class="btn btn-light" href="/index" role="button"><i class="fas fa-home"></i> Home</a>
             {% endif %}
-            <a class="btn btn-primary" href='/index_mail' role="button">Back</a>
+            <a class="btn btn-light" href='/index_mail' role="button"><i class="fas fa-arrow-left"></i> Back</a>
         </div><br>
     </form>
 </div>
