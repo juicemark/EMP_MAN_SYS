@@ -1,0 +1,47 @@
+{% load static %} {% load humanize %}{% block content %} {% if user.is_authenticated %}
+{% block navbar %} {% include "navbar.html" %} {% endblock navbar %}
+{% block navigation %} {% include "navigation.html" %} {% endblock navigation %}
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <title>Employee Management System</title>
+</head>
+<body>
+<br><<br><br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                            Total Departments
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                            Total Roles
+                        </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                            Total Employees
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- Include Bootstrap JavaScript without jQuery and Popper -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}
