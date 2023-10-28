@@ -1,0 +1,50 @@
+{% block navbar %} {% include "navbar.html" %} {% endblock navbar %}
+{% block navigation %} {% include "navigation.html" %} {% endblock navigation %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Salary Report</title>
+</head>
+<body>
+    <div class="container">
+    <h1 style="color:white">Salary Report</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <li style="color:white">Name</li>
+                <li style="color:white">Department</li>
+                <li style="color:white">Salary Amount</li>
+                <li style="color:white">Date</li>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>
+                        {% for salary in salaries %}
+                            {% if salary.employee == employee %}
+                                {{ salary.amount }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for salary in salaries %}
+                            {% if salary.employee == employee %}
+                                {{ salary.date }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
