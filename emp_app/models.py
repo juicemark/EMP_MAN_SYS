@@ -41,3 +41,11 @@ class Mail(models.Model):
     recipient = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
+
+class Salary(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='salaries')
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date = models.DateField()
+
+    def __str__(self):
+        return f"{self.employee.name} - {self.date}"

@@ -44,6 +44,7 @@ urlpatterns = ([
     path('sent_mail', views.sent_mail, name='sent_mail'),
     path('received_mail', views.received_mail, name='received_mail'),
     path('reply_mail', views.Reply, name="reply_mail"),
+    path('salary_report', views.salary_report, name='salary_report'),
 
      ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) +
                static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from .models import Memo
 from emp_app.forms import MemoForm
 from .models import Mail
+from .models import Salary
 
 # Create your views here.
 @login_required
@@ -165,3 +166,9 @@ def received_mail(request):
 
 
     return render(request, 'received_mail.html', {'mails' : mails})
+
+def salary_report(request):
+    employees = Employee.objects.all()
+    salaries = Salary.objects.all()
+
+    return render(request, 'salary_report.html', {'employees': employees, 'salaries': salaries})
