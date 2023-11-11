@@ -12,7 +12,13 @@ from .models import Salary
 # Create your views here.
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'page_title': 'Home',
+        'total_department':len(Department.objects.all()),
+        'total_role':len(Role.objects.all()),
+        'total_employee':len(Employee.objects.all()),
+    }
+    return render(request, 'index.html', context)
 
 @login_required
 def all_emp(request):
