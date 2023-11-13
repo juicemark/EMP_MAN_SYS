@@ -32,7 +32,7 @@
           {% for emp in emps %}
   <tbody>
     <tr>
-      <th scope="row">{{ emp.id }}</th>
+      <th scope="row">{{ forloop.counter }}</th>
 
       <td>{{emp.first_name}}</td>
       <td>{{emp.last_name}}</td>
