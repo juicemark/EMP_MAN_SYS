@@ -1,1 +1,1 @@
-web: gunicorn EMP_MAN_SYS.wsgi
+web: gunicorn empmansys.wsgi
